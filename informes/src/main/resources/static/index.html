@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Gestión de Informes - CEI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <header>
+            <h1>Dashboard de Gestión de Informes Técnicos del CEI</h1>
+        </header>
+
+        <div class="seccion">
+            <h2>Gestión de Informes</h2>
+            <form id="formularioInforme">
+                <div class="grid-formulario">
+                    
+                    <div class="campo-formulario">
+                        <div class="label-con-ayuda">
+                            <label for="idLaboratorioFk">Laboratorio Actual:</label>
+                            <span id="faq-laboratorio-btn" class="boton-faq" title="Ayuda sobre laboratorios antiguos">(?)</span>
+                        </div>
+                        <select id="idLaboratorioFk" name="laboratorio.idLaboratorio" required>
+                            <option value="">Seleccione un laboratorio...</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <div class="label-con-ayuda">
+                            <label for="numeroSolicitud">Número de Solicitud:</label>
+                             <span id="faq-numsol-btn" class="boton-faq" title="Ayuda sobre el número de solicitud">(?)</span>
+                        </div>
+                        <input type="text" id="numeroSolicitud" name="numeroSolicitud" placeholder="Ej: 001" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <div class="label-con-ayuda">
+                            <label for="anioInforme">Año del Informe:</label>
+                            <span id="faq-ano-btn" class="boton-faq" title="Ayuda sobre el año del informe">(?)</span>
+                        </div>
+                        <input type="number" id="anioInforme" name="anioInforme" placeholder="Ej: 2024" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <div class="label-con-ayuda">
+                            <label for="numeroSecuencialInforme">Número Secuencial:</label>
+                            <span id="faq-numsec-btn" class="boton-faq" title="Ayuda sobre el número secuencial">(?)</span>
+                        </div>
+                        <input type="number" id="numeroSecuencialInforme" name="numeroSecuencialInforme" placeholder="Ej: 1, 2, 3..." required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="tipoSolicitud">Tipo de Solicitud:</label>
+                        <select id="tipoSolicitud" name="tipoSolicitud" required>
+                            <option value="SI">Interna (SI)</option>
+                            <option value="SE">Externa (SE)</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="responsableTecnico">Responsable Técnico:</label>
+                        <input type="text" id="responsableTecnico" name="responsableTecnico" placeholder="Ej: Juan Pérez">
+                    </div>
+
+                     <div class="campo-formulario">
+                        <label for="empresaCliente">Empresa / Cliente:</label>
+                        <input type="text" id="empresaCliente" name="empresaCliente" placeholder="Ej: Autoridad del Canal de Panamá">
+                    </div>
+                    
+                    <div class="campo-formulario" style="grid-column: 1 / -1;">
+                        <label for="descripcionInforme">Descripción del Informe:</label>
+                        <textarea id="descripcionInforme" name="descripcionInforme" placeholder="Breve descripción del contenido del informe..."></textarea>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <div class="label-con-ayuda">
+                            <label for="idInformeOriginal">ID Informe Original (si aplica):</label>
+                            <span id="faq-idoriginal-btn" class="boton-faq" title="Ayuda sobre el ID Informe Original">(?)</span>
+                        </div>
+                        <input type="text" id="idInformeOriginal" name="idInformeOriginal" placeholder="Ej: CEI-LABSA-001-2010">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="numeroPaginas">Número de Páginas:</label>
+                        <input type="number" id="numeroPaginas" name="numeroPaginas" placeholder="Ej: 15">
+                    </div>
+
+                     <div class="campo-formulario">
+                        <label for="archivo">Archivo Digitalizado:</label>
+                        <input type="file" id="archivo" name="archivo" required>
+                    </div>
+                </div>
+                <br>
+                <button type="submit">Guardar Nuevo Informe</button>
+                <button type="button" id="btnBuscar">Buscar Informes</button>
+                <button type="reset">Limpiar Formulario</button>
+            </form>
+        </div>
+
+        <div class="seccion" id="seccion-resultados">
+            <h2>Resultados de la Búsqueda</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID CEI</th>
+                        <th>Año</th>
+                        <th>Descripción</th>
+                        <th>Responsable</th>
+                        <th>Documento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaResultados">
+                    <tr>
+                        <td colspan="6" style="text-align:center;">Realice una búsqueda para ver los resultados.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

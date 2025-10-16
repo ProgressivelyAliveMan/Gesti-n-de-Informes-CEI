@@ -1,0 +1,160 @@
+:root {
+    --color-principal-cei: #230078;
+    --color-texto-principal: #333;
+    --color-fondo: #f4f7fa;
+    --color-borde: #d1d9e6;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-blanco: #ffffff;
+    --color-link: #007bff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: auto;
+    background: var(--color-blanco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+header {
+    background-color: var(--color-principal-cei);
+    color: var(--color-blanco);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 20px -20px;
+}
+
+h1, h2 {
+    margin-top: 0;
+    color: var(--color-principal-cei);
+}
+
+h1 {
+     color: var(--color-blanco);
+     font-size: 2em;
+}
+
+.seccion {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+}
+
+.grid-formulario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"], input[type="file"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    font-size: 1em;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-principal-cei);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    background-color: var(--color-principal-cei);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #3a1a9a;
+}
+
+#seccion-resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#seccion-resultados th, #seccion-resultados td {
+    border: 1px solid var(--color-borde);
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#seccion-resultados th {
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+
+.link-documento {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 600;
+}
+.link-documento:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenedor de la etiqueta y el botón de ayuda */
+.label-con-ayuda {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto y el botón */
+    gap: 8px; /* Espacio entre la etiqueta y el botón */
+}
+
+/* Estilos para el botón de FAQ */
+.boton-faq {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px; /* Centra el texto (?) verticalmente */
+    text-align: center; /* Centra el texto (?) horizontalmente */
+    border-radius: 50%; /* Lo hace redondo */
+    background-color: var(--color-principal-cei);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: help; /* Cambia el cursor para indicar que es un botón de ayuda */
+    user-select: none; /* Evita que el texto (?) se pueda seleccionar */
+    transition: transform 0.2s;
+}
+
+.boton-faq:hover {
+    transform: scale(1.1); /* Efecto de zoom ligero al pasar el mouse */
+}
